@@ -30,7 +30,3 @@ logging:
             hibernate:
                 SQL: error
                 type: error
-
- 
-
-management.endpoints.web.exposure.include: "*"
