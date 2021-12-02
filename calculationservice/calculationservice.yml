@@ -22,7 +22,7 @@ spring:
         resources:
             cache:
                 cachecontrol:
-                    cache-public: true
+                    cache-public: false
 
 logging:
     level:
