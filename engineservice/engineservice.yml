@@ -28,8 +28,8 @@ logging:
     level:
         org:
             hibernate:
-                SQL: error
-                type: error
+                SQL: debug
+                type: debug
 
 
 management.endpoints.web.exposure.include: "*"
