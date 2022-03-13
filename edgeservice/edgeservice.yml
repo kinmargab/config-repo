@@ -23,3 +23,10 @@ spring:
         filters:
         - AddRequestHeader=X-Tenant,acme
         - AddResponseHeader=X-Genre,fanstasy
+      - id: model-route
+        uri: lb://ENGINESERVICE
+        predicates:
+        - Path=/api/v1/engines/**
+        filters:
+        - AddRequestHeader=X-Tenant,acme
+        - AddResponseHeader=X-Genre,fanstasy
