@@ -33,7 +33,7 @@ spring:
       - id: calculation-route
         uri: lb://CALCULATIONSERVICE
         predicates:
-        - Path=/api/v1/calculation/**
+        - Path=/api/v1/cal/**
         filters:
         - AddRequestHeader=X-Tenant,acme
         - AddResponseHeader=X-Genre,fanstasy
