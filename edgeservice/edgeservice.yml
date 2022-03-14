@@ -5,7 +5,7 @@ spring:
       - id: brand-route
         uri: lb://BRANDSERVICE
         predicates:
-        - Path=/api/v1/brands/**
+        - Path=/brands/**
         filters:
         - AddRequestHeader=X-Tenant,acme
         - AddResponseHeader=X-Genre,fanstasy
