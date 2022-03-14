@@ -34,7 +34,6 @@ spring:
         uri: lb://CALCULATIONSERVICE
         predicates:
         - Path=/api/v1/calculation/**
-        - Method =GET
         filters:
         - AddRequestHeader=X-Tenant,acme
         - AddResponseHeader=X-Genre,fanstasy
