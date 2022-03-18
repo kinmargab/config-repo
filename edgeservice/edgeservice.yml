@@ -9,7 +9,7 @@ spring:
       - id: product-route
         uri: lb://PRODUCTSERVICE
         predicates:
-        - Path=/api/v1/products/**
+        - Path=/products/**
         filters:
         - AddRequestHeader=X-Tenant,acme
         - AddResponseHeader=X-Genre,fanstasy
