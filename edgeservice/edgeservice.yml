@@ -16,7 +16,7 @@ spring:
       - id: model-route
         uri: lb://MODELSERVICE
         predicates:
-        - Path=/api/v1/models/**
+        - Path=/models/**
         filters:
         - AddRequestHeader=X-Tenant,acme
         - AddResponseHeader=X-Genre,fanstasy
