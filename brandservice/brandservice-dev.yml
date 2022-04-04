@@ -3,7 +3,7 @@ server.port: 8086
 
 spring:
     datasource:
-        url: "jdbc:mysql://localhost:3306/calcdev"
+        url: "r2dbc:pool:mysql://localhost:3306/calcdev"
         username: root
         password: "{cipher}9d559a5a044a898d7d7eb4950c82fddaedb01357448c2244cd4755c5644d2b0c4202404e95b7e820bca99aa47c8987ce"
 #Hibernate
