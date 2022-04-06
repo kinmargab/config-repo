@@ -20,7 +20,7 @@ spring:
         generate-ddl: false
     web:
         resources:
-            cache:
+            cache:  
                 cachecontrol:
                     cache-public: true
 
