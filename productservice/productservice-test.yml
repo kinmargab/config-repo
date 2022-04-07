@@ -2,5 +2,5 @@ server.port: 8085
 spring:
     data:
         mongodb:
-            database: product-service
+            database: product-service-test
 
