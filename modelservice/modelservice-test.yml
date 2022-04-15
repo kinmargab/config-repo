@@ -3,4 +3,4 @@ server.port: 8084
 spring:
     data:
         mongodb:
-            database: model-service
+            database: model-service-test
