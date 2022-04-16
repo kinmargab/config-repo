@@ -6,7 +6,6 @@ spring:
         uri: lb://BRANDSERVICE
         predicates:
         - Path=/brands/**
-        - Paht=/filters/**
         filters:
         - AddRequestHeader=X-Tenant,acme
         - AddResponseHeader=X-Genre,webCalc
