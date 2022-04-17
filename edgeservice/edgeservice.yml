@@ -49,3 +49,6 @@ spring:
           filters:
             - AddRequestHeader=X-Tenant,acme
             - AddResponseHeader=X-Genre,webCalc
+
+management:
+  endpoints.web.exposure.include=*
