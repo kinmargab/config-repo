@@ -21,7 +21,6 @@ spring:
               args:
                 name: brandCircuitBreaker
                 fallbackUri: forward:/brands-fallback
-            - RewritePath=/brands/products, /brands
         - id: product-route
           uri: lb://PRODUCTSERVICE
           predicates:
