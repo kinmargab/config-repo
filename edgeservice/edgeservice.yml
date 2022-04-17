@@ -1,39 +1,47 @@
 spring:
   cloud:
     gateway:
+      httpclient:
+        connect-timeout: 2000 # 2s
+        response-timeout: 5s
+        pool:
+          type: elastic
+          max-idle-time: 15s
+          max-life-time: 60s
       routes:
-      - id: brand-route
-        uri: lb://BRANDSERVICE
-        predicates:
-        - Path=/brands/**
-        filters:
-        - AddRequestHeader=X-Tenant,acme
-        - AddResponseHeader=X-Genre,webCalc
-      - id: product-route
-        uri: lb://PRODUCTSERVICE
-        predicates:
-        - Path=/products/**
-        filters:
-        - AddRequestHeader=X-Tenant,acme
-        - AddResponseHeader=X-Genre,webCalc
-      - id: model-route
-        uri: lb://MODELSERVICE
-        predicates:
-        - Path=/models/**
-        filters:
-        - AddRequestHeader=X-Tenant,acme
-        - AddResponseHeader=X-Genre,webCalc
-      - id: engine-route
-        uri: lb://ENGINESERVICE
-        predicates:
-        - Path=/engines/**
-        filters:
-        - AddRequestHeader=X-Tenant,acme
-        - AddResponseHeader=X-Genre,webCalc
-      - id: calculation-route
-        uri: lb://CALCULATIONSERVICE
-        predicates:
-        - Path=/calculation/**
-        filters:
-        - AddRequestHeader=X-Tenant,acme
-        - AddResponseHeader=X-Genre,webCalc
+        - id: brand-route
+          uri: lb://BRANDSERVICE
+          predicates:
+            - Path=/brands/**
+          filters:
+            - AddRequestHeader=X-Tenant,acme
+            - AddResponseHeader=X-Genre,webCalc
+            - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+        - id: product-route
+          uri: lb://PRODUCTSERVICE
+          predicates:
+            - Path=/products/**
+          filters:
+            - AddRequestHeader=X-Tenant,acme
+            - AddResponseHeader=X-Genre,webCalc
+        - id: model-route
+          uri: lb://MODELSERVICE
+          predicates:
+            - Path=/models/**
+          filters:
+            - AddRequestHeader=X-Tenant,acme
+            - AddResponseHeader=X-Genre,webCalc
+        - id: engine-route
+          uri: lb://ENGINESERVICE
+          predicates:
+            - Path=/engines/**
+          filters:
+            - AddRequestHeader=X-Tenant,acme
+            - AddResponseHeader=X-Genre,webCalc
+        - id: calculation-route
+          uri: lb://CALCULATIONSERVICE
+          predicates:
+            - Path=/calculation/**
+          filters:
+            - AddRequestHeader=X-Tenant,acme
+            - AddResponseHeader=X-Genre,webCalc
