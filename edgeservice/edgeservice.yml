@@ -17,6 +17,11 @@ spring:
             - AddRequestHeader=X-Tenant,acme
             - AddResponseHeader=X-Genre,webCalc
             - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+            - name: CircuitBreaker
+              args:
+                name: brandCircuitBreaker
+                fallbackUri: forward:/brands-fallback
+            - RewritePath=/brands/products, /brands
         - id: product-route
           uri: lb://PRODUCTSERVICE
           predicates:
