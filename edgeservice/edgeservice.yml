@@ -50,5 +50,4 @@ spring:
             - AddRequestHeader=X-Tenant,acme
             - AddResponseHeader=X-Genre,webCalc
 
-management:
-  endpoints.web.exposure.include=*
+management.endpoints.web.exposure.include: "*"
