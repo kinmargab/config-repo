@@ -28,6 +28,10 @@ spring:
           filters:
             - AddRequestHeader=X-Tenant,acme
             - AddResponseHeader=X-Genre,webCalc
+            - name: CircuitBreaker
+              args:
+                name: brandCircuitBreaker
+                fallbackUri: forward:/brands-fallback
         - id: model-route
           uri: lb://MODELSERVICE
           predicates:
