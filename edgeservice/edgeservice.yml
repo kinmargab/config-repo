@@ -31,7 +31,7 @@ spring:
             - name: CircuitBreaker
               args:
                 name: brandCircuitBreaker
-                fallbackUri: forward:/brands-fallback
+                fallbackUri: forward:/products-fallback
         - id: model-route
           uri: lb://MODELSERVICE
           predicates:
