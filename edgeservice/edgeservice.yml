@@ -2,7 +2,7 @@ spring:
   cloud:
     gateway:
       httpclient:
-        connect-timeout: 2000 # 2s
+        connect-timeout: 5000 # 2s
         response-timeout: 5s
         pool:
           type: elastic
