@@ -6,9 +6,10 @@ spring:
             enabled: true
         initialize-schema: always
     datasource:
-     url: "jdbc:mysql://localhost:3306/spring_batch"
-     username: root
-     password: UbPXaZM4sS2yl4VcXyG8
+        url: jdbc:h2:mem:spring_batch
+        username: sa
+        password: password
+        driverClassName: org.h2.Driver
     data:
         mongodb:
             database: calculation-service
