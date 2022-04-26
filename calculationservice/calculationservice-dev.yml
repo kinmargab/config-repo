@@ -4,7 +4,7 @@ spring:
     batch:
         job:
             enabled: true
-        initialize-schema: always
+        initialize-schema: create
     datasource:
      url: "jdbc:mysql://localhost:3306/spring_batch"
      username: root
@@ -12,3 +12,4 @@ spring:
     data:
         mongodb:
             database: calculation-service
+            
