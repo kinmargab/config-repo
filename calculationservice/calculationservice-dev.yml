@@ -1,6 +1,13 @@
 server.port: 8082
 
 spring:
+    batch:
+        job:
+        enabled: false
+    datasource:
+     url: "jdbc:mysql://localhost:3306/spring_batch"
+     username: root
+     password: UbPXaZM4sS2yl4VcXyG8
     data:
         mongodb:
             database: calculation-service
